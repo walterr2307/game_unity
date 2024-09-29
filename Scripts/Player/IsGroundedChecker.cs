@@ -11,7 +11,7 @@ public class IsGroundedChecker : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
-    public bool isGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.OverlapBox(checkerPosition.position, checkerSize, 0f, groundLayer);
     }

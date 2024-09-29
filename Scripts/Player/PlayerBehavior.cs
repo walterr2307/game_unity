@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
@@ -24,11 +23,16 @@ public class PlayerBehavior : MonoBehaviour
     {
         float moveDirection = inputManager.getMoveDirection() * Time.deltaTime * speed;
         transform.Translate(moveDirection, 0f, 0f);
+
+        if (moveDirection < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (moveDirection > 0)
+            transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void HandleJump()
     {
-        if (isGroundedChecker.isGrounded())
+        if (isGroundedChecker.IsGrounded())
         {
             rb.velocity += Vector2.up * jumpForce;
             doubleJump = true;
