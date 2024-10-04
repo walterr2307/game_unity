@@ -5,6 +5,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField]
     private float speed = 5,
         jumpForce = 5;
+
+    private float moveDirection;
     private bool doubleJump = false;
     private InputManager inputManager;
     private Rigidbody2D rb;
@@ -21,9 +23,18 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Update()
     {
-        float moveDirection = inputManager.getMoveDirection() * Time.deltaTime * speed;
-        transform.Translate(moveDirection, 0f, 0f);
+        Move();
+        ChangeDirectionMovement();
+    }
 
+    private void Move()
+    {
+        moveDirection = inputManager.getMoveDirection() * Time.deltaTime * speed;
+        transform.Translate(moveDirection, 0f, 0f);
+    }
+
+    private void ChangeDirectionMovement()
+    {
         if (moveDirection < 0)
             transform.localScale = new Vector3(-1, 1, 1);
         else if (moveDirection > 0)
