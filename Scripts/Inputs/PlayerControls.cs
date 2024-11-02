@@ -25,21 +25,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Gameplay"",
-            ""id"": ""a66d8559-9457-497f-a8ca-647e81c05a9d"",
+            ""id"": ""13dc9adc-da4c-4f59-b3c7-f45d76946a36"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""MovementX"",
                     ""type"": ""Button"",
-                    ""id"": ""c6cb6f61-744c-4196-887c-7b3b93a243d1"",
+                    ""id"": ""3cc82627-9c06-4412-85a3-5448dd2eb18a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""Movement Y"",
                     ""type"": ""Button"",
-                    ""id"": ""230a7d37-3e5a-4c64-aee2-e1956146aac3"",
+                    ""id"": ""1bdd3409-ba1e-46e4-be22-8528cbeb87f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Accelerate"",
+                    ""type"": ""Button"",
+                    ""id"": ""4ca25f3f-b1be-421c-9600-69d3ac5b83ab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab5fdc4e-b003-4cc7-ad22-fb4ad0a6a339"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,46 +66,90 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Arrows - Left/Right"",
-                    ""id"": ""af84255d-578a-4b55-bbbb-38cf5ab812de"",
+                    ""name"": ""arrows - left/right"",
+                    ""id"": ""a24d69e6-05bf-4a5c-8bb2-4d4bc3e4f42b"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""1166ca04-3b1c-4509-827d-61bbd016c333"",
+                    ""id"": ""1c80de5a-b019-43f9-aeba-23d15298cc89"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""60aa269a-274a-4e9c-9376-009e4e7a69bf"",
+                    ""id"": ""1fcc6edb-8add-4552-bab9-5c4c7b3f2d8c"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""arrows - up/down"",
+                    ""id"": ""6f03b904-f3fb-4ced-84b9-7ecbc9695065"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement Y"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""531f77ba-018a-4527-8a60-5986121f301c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement Y"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8d098817-01a5-406c-b9b7-15caf5495179"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement Y"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0b956295-06f5-40c7-9219-a572a98cf7cc"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""fde7a94c-4f3b-4629-9d51-0e341dd15b68"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""Accelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""01b6827a-165f-4091-aebc-113e20cc34b4"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Teleport"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -98,8 +160,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
+        m_Gameplay_MovementX = m_Gameplay.FindAction("MovementX", throwIfNotFound: true);
+        m_Gameplay_MovementY = m_Gameplay.FindAction("Movement Y", throwIfNotFound: true);
+        m_Gameplay_Accelerate = m_Gameplay.FindAction("Accelerate", throwIfNotFound: true);
+        m_Gameplay_Teleport = m_Gameplay.FindAction("Teleport", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,14 +225,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_Jump;
+    private readonly InputAction m_Gameplay_MovementX;
+    private readonly InputAction m_Gameplay_MovementY;
+    private readonly InputAction m_Gameplay_Accelerate;
+    private readonly InputAction m_Gameplay_Teleport;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
+        public InputAction @MovementX => m_Wrapper.m_Gameplay_MovementX;
+        public InputAction @MovementY => m_Wrapper.m_Gameplay_MovementY;
+        public InputAction @Accelerate => m_Wrapper.m_Gameplay_Accelerate;
+        public InputAction @Teleport => m_Wrapper.m_Gameplay_Teleport;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -178,22 +246,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @MovementX.started += instance.OnMovementX;
+            @MovementX.performed += instance.OnMovementX;
+            @MovementX.canceled += instance.OnMovementX;
+            @MovementY.started += instance.OnMovementY;
+            @MovementY.performed += instance.OnMovementY;
+            @MovementY.canceled += instance.OnMovementY;
+            @Accelerate.started += instance.OnAccelerate;
+            @Accelerate.performed += instance.OnAccelerate;
+            @Accelerate.canceled += instance.OnAccelerate;
+            @Teleport.started += instance.OnTeleport;
+            @Teleport.performed += instance.OnTeleport;
+            @Teleport.canceled += instance.OnTeleport;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @MovementX.started -= instance.OnMovementX;
+            @MovementX.performed -= instance.OnMovementX;
+            @MovementX.canceled -= instance.OnMovementX;
+            @MovementY.started -= instance.OnMovementY;
+            @MovementY.performed -= instance.OnMovementY;
+            @MovementY.canceled -= instance.OnMovementY;
+            @Accelerate.started -= instance.OnAccelerate;
+            @Accelerate.performed -= instance.OnAccelerate;
+            @Accelerate.canceled -= instance.OnAccelerate;
+            @Teleport.started -= instance.OnTeleport;
+            @Teleport.performed -= instance.OnTeleport;
+            @Teleport.canceled -= instance.OnTeleport;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -213,7 +293,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public GameplayActions @Gameplay => new GameplayActions(this);
     public interface IGameplayActions
     {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnMovementX(InputAction.CallbackContext context);
+        void OnMovementY(InputAction.CallbackContext context);
+        void OnAccelerate(InputAction.CallbackContext context);
+        void OnTeleport(InputAction.CallbackContext context);
     }
 }

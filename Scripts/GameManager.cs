@@ -5,8 +5,6 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private InputManager inputManager;
 
-    private GameManager() { }
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -17,7 +15,7 @@ public class GameManager : MonoBehaviour
         inputManager = new InputManager();
     }
 
-    public static GameManager getInstance()
+    public static GameManager Instance()
     {
         return instance;
     }

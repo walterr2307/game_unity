@@ -1,24 +1,32 @@
-using System;
+using System.Diagnostics;
 
 public class InputManager
 {
-    private PlayerControls playerControls = new PlayerControls();
-    public event Action OnJump;
+    private PlayerControls playerControls;
 
     public InputManager()
     {
+        playerControls = new PlayerControls();
         playerControls.Gameplay.Enable();
-        playerControls.Gameplay.Jump.performed += context => OnJumpPerformed();
     }
 
-    private void OnJumpPerformed()
+    public float getMovX()
     {
-        OnJump?.Invoke();
+        return playerControls.Gameplay.MovementX.ReadValue<float>();
     }
 
-    public float getMoveDirection()
+    public float getMovY()
     {
-        float moveDirection = playerControls.Gameplay.Movement.ReadValue<float>();
-        return moveDirection;
+        return playerControls.Gameplay.MovementY.ReadValue<float>();
+    }
+
+    public bool Accelarate()
+    {
+        return playerControls.Gameplay.Accelerate.ReadValue<float>() == 1f;
+    }
+
+    public bool Teleport()
+    {   
+        return playerControls.Gameplay.Teleport.ReadValue<float>() == 1f;
     }
 }
